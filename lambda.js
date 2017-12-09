@@ -3,7 +3,7 @@
 
     var Alexa = require("alexa-sdk");
 
-    var list = ["stand", "sit", "lie down"];
+    var list = ["STAND", "SIT", "LIE DOWN"];
 
     var handlers = {
 
@@ -41,7 +41,7 @@
                 allItems.push(" Item " + [i+1] + " on your to do list is "+ list[i]);
             }
             var listString = allItems.toString();
-            this.response.speak(listString);
+            this.response.speak("Sure thing! " + listString);
             this.emit(":responseReady");
         },
 
@@ -71,7 +71,6 @@
 
         "DestroyIntent": function () {
           list.splice(this.attributes.currentIndex, 1);
-          this.attributes.currentIndex += 1;
           var nextItem = list[this.attributes.currentIndex].toUpperCase();
           this.response
               .speak("Item removed. Your next to do item is " + nextItem)
