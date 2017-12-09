@@ -1,6 +1,8 @@
-# **Kimberly's To Do List Skill**
+# **kimberly's To Do List Skill**
 
-## This Alexa sample skill allows users to create, listen to, and update their to do list. Currently (12/08/17), the skill does not persist the list to a database. The list comes pre-populated with "stand", "sit", and "lie down" to do list items. Feel free to remove those by asking the skill to take you to the update menu.
+### This Alexa sample skill allows users to create, 'view', and update their to do list.
+
+#### Currently, the skill does not persist the list to a database. The skill comes pre-populated with "stand", "sit", and "lie down" to do list items.Feel free to remove those by asking the skill to take you to the update menu. Additionally, you can create items in the session through the create menu.
 
 <h1 style="text-align: center;"> Example </h1>
 
@@ -39,41 +41,3 @@
 > Main Menu.
 
       Main menu. Do you want to create an item, view all items, or update items on kimberly's to do list?
-
-<h1 style="text-align: center;"> Skill Details </h1>
-
-#### QuestionIntent sample utterances:
-
-> 'What might a user say to invoke this intent?'
-
-      Practice {language}
-
-      Test my {language}
-
-#### language slot values:
-
-      python
-
-      ruby
-
-#### AnswerIntent sample utterances:
-
-> 'What will Alexa say to ask the user to fill this slot?'
-
-      Is it {answer}
-
-      I think it's {answer}
-
-#### answer slot values:
-
-      length
-
-      len
-
-      print
-
-      puts
-
-      yes
-
-      no
