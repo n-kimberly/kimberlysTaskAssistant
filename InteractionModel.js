@@ -27,7 +27,9 @@
         "add",
         "add to my list",
         "create item for list",
-        "create item"
+        "create item",
+        "create an item",
+        "create item on to do list"
       ]
     },
     {
@@ -48,7 +50,10 @@
             "buy toothpaste",
             "clean room",
             "get Rachel a smoothie",
-            "cook dinner"
+            "cook dinner",
+            "stand"
+            "sit",
+            "lie down"
           ]
         }
       ]
@@ -60,7 +65,9 @@
         "view",
         "view my list",
         "view items",
-        "list items"
+        "list items",
+        "view all items",
+        "view to do list"
       ]
     },
     {
@@ -70,7 +77,9 @@
         "update",
         "update my list",
         "update items",
-        "update list"
+        "update list",
+        "update the to do list",
+        "update to do list"
       ]
     },
     {
@@ -90,7 +99,8 @@
         "done",
         "completed",
         "remove that",
-        "finished"
+        "finished",
+        "remove"
       ]
     }
   ]
