@@ -3,29 +3,21 @@
 
     var Alexa = require("alexa-sdk");
 
-    var list = [
-      "go grocery shopping",
-      "clean old apartment",
-      "complete checkpoint 5",
-      "get some sleep",
-      "this is the end of your to do list"
-    ];
-
-    var LIST_LENGTH = list.length;
+    var list = [];
 
     var handlers = {
 
         "LaunchRequest": function () {
             this.attributes.currentIndex = 0;
             this.response
-                .speak("Welcome to kimberly's to do list. Do you want to view or update kimberly's to do list?").listen("Would you like to create item on to do list, view to do list, or update the to do list?");
+                .speak("Welcome to kimberly's to do list. Do you want to create an item, view all items, or update items on kimberly's to do list?").listen("Would you like to create item on to do list, view to do list, or update the to do list?");
             this.emit(":responseReady");
         },
 
         "MenuIntent": function () {
             this.attributes.currentIndex = 0;
             this.response
-                .speak("Do you want to view or update kimberly's to do list?").listen("Would you like to create item on to do list, view to do list, or update the to do list?");
+                .speak("Do you want to create an item, view all items, or update items on kimberly's to do list?").listen("Would you like to create item on to do list, view to do list, or update the to do list?");
             this.emit(":responseReady");
         },
 
@@ -36,28 +28,27 @@
         },
 
         "CreateActionIntent": function () {
-          // var actionItem = this.event.request.intent.slots.item.value.toString().toLowerCase();
-          // backlog.push(actionItem);
+          var actionItem = this.event.request.intent.slots.actionItem.value.toString().toUpperCase();
+          list.push(actionItem);
           this.response
-              .speak("Added! What else would you like to add? Say menu to return to the main menu.").listen("Your item has been added. Say menu to return to the main menu.");
+              .speak(actionItem + " has been added! You now have "+ list.length +" items. What else would you like to add? Say menu to return to the main menu.").listen("Your item has been added. Say menu to return to the main menu.");
           this.emit(":responseReady");
         },
 
         "ViewIntent": function () {
-            // var allItems = [];
-            // for (var i = 0; i < LIST_LENGTH; i += 1) {
-            //     allItems.push(list[this.attributes.i].toUpperCase());
-            // }
-            // this.response.speak(allItems.toString());
-            this.response
-                .speak("OK. I will recite your list.").listen("I will recite your list to you.");
+            var allItems = [];
+            for (var i = 0; i < list.length; i += 1) {
+                allItems.push(" Item " + [i+1] + " on your to do list is "+ list[i]);
+            }
+            var listString = allItems.toString();
+            this.response.speak(listString);
             this.emit(":responseReady");
         },
 
         "UpdateIntent": function () {
             var currentItem = list[this.attributes.currentIndex].toUpperCase();
             this.response
-                .speak("Okay, I will remind you of your to do items one by one. You have " + LIST_LENGTH + " items. After each, please respond with completed, remove, or next to hear the next item. " +  currentItem)
+                .speak("Okay, I will remind you of your to do items one by one. After each, please respond with completed, remove, or next to hear the next item. " +  currentItem)
                 .listen(currentItem);
             this.emit(":responseReady");
         },
