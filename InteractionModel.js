@@ -28,8 +28,7 @@
         "add to my list",
         "create item for list",
         "create item"
-      ],
-      "slots": []
+      ]
     },
     {
       "name": "CreateActionIntent",
@@ -42,7 +41,7 @@
       ],
       "slots": [
         {
-          "name": "item",
+          "name": "actionItem",
           "samples": [
             "go grocery shopping",
             "go to the gym",
@@ -62,8 +61,7 @@
         "view my list",
         "view items",
         "list items"
-      ],
-      "slots": []
+      ]
     },
     {
       "name": "UpdateIntent",
@@ -73,8 +71,7 @@
         "update my list",
         "update items",
         "update list"
-      ],
-      "slots": []
+      ]
     },
     {
       "name": "IndexIntent",
@@ -84,8 +81,7 @@
         "nope",
         "no",
         "next item please"
-      ],
-      "slots": []
+      ]
     },
     {
       "name": "DestroyIntent",
@@ -95,8 +91,7 @@
         "completed",
         "remove that",
         "finished"
-      ],
-      "slots": []
+      ]
     }
   ]
 }
