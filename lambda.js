@@ -95,6 +95,11 @@
           this.emit(":responseReady");
         },
 
+        'AMAZON.HelpIntent': function () {
+            this.response.speak("Say, view to view your to do list; update to update your to do list; and create to create an item on your to do list.");
+            this.emit(":responseReady");
+        },
+
         "AMAZON.StopIntent": function () {
             this.response.speak("Exiting kimberly's to do list.");
             this.emit(":responseReady");
