@@ -86,11 +86,18 @@
         "AMAZON.CancelIntent": function () {
             this.response.speak("Exiting kimberly's to do list.");
             this.emit(":responseReady");
+        },
+
+        // Save state
+        'SessionEndedRequest': function() {
+          console.log('session ended!');
+          this.emit(':saveState', true);
         }
     };
 
     exports.handler = function (event, context, callback) {
         var alexa = Alexa.handler(event, context);
+        alexa.dynamoDBTableName = 'kimberlyTODOLIST';
         alexa.registerHandlers(handlers);
         alexa.execute();
     };
