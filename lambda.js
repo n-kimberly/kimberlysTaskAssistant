@@ -10,14 +10,14 @@
         "LaunchRequest": function () {
             this.attributes.currentIndex = 0;
             this.response
-                .speak("Welcome to kimberly's to do list. Do you want to create an item, view all items, or update items on kimberly's to do list?").listen("Would you like to create an item on your to do list, view your to do list, or update your to do list?");
+                .speak("Welcome to Kimberly's to do list. Do you want to create an item, view all items, or update items on Kimberly's to do list?").listen("Would you like to create an item on your to do list, view your to do list, or update your to do list?");
             this.emit(":responseReady");
         },
 
         "MenuIntent": function () {
             this.attributes.currentIndex = 0;
             this.response
-                .speak("Main menu. Do you want to create an item, view all items, or update items on kimberly's to do list?").listen("Would you like to create item on to do list, view to do list, or update the to do list?");
+                .speak("Main menu: do you want to create an item, view all items, or update items on kimberly's to do list?").listen("Would you like to create item on to do list, view to do list, or update the to do list?");
             this.emit(":responseReady");
         },
 
@@ -48,7 +48,7 @@
         "UpdateIntent": function () {
             var currentItem = list[this.attributes.currentIndex].toUpperCase();
             this.response
-                .speak("Okay, I will remind you of your to do items one by one. After each, please respond with completed, remove, or next to hear the next item. Your first item is " +  currentItem)
+                .speak("Okay, I will recite your to do list items one by one. After each, please respond with completed, remove, or next to hear the next item. Your first item is " +  currentItem)
                 .listen(currentItem);
             this.emit(":responseReady");
         },
@@ -57,24 +57,41 @@
           this.attributes.currentIndex += 1;
           if (this.attributes.currentIndex < list.length) {
             var nextItem = list[this.attributes.currentIndex].toUpperCase();
-            this.response
-                .speak("You'll need to complete that at some point in your life. Your next item is " + nextItem)
-                .listen(nextItem);
-            this.emit(":responseReady");
+            var indexResponse = "Your next items is " + nextItem;
           } else {
-            this.response
-                .speak("You have no more items. Say menu to return to the main menu.")
-                .listen("Say menu to return to the main menu.");
-            this.emit(":responseReady");
+            var indexResponse = "You have no more items. Say menu to return to the main menu.";
           }
+          this.response
+              .speak("You'll need to complete that at some point in your life. " + indexResponse)
+              .listen(indexResponse);
+          this.emit(":responseReady");
         },
 
-        "DestroyIntent": function () {
+        "CompleteIntent": function () {
           list.splice(this.attributes.currentIndex, 1);
-          var nextItem = list[this.attributes.currentIndex].toUpperCase();
+          if (this.attributes.currentIndex < list.length) {
+            var nextItem = list[this.attributes.currentIndex].toUpperCase();
+            var indexResponse = "Your next items is " + nextItem;
+          } else {
+            var indexResponse = "You have no more items. Say menu to return to the main menu.";
+          }
           this.response
-              .speak("Item removed. Your next to do item is " + nextItem)
-              .listen(nextItem);
+              .speak("Great job! Item has been removed. " + indexResponse)
+              .listen(indexResponse);
+          this.emit(":responseReady");
+        },
+
+        "RemoveIntent": function () {
+          list.splice(this.attributes.currentIndex, 1);
+          if (this.attributes.currentIndex < list.length) {
+            var nextItem = list[this.attributes.currentIndex].toUpperCase();
+            var indexResponse = "Your next items is " + nextItem;
+          } else {
+            var indexResponse = "You have no more items. Say menu to return to the main menu.";
+          }
+          this.response
+              .speak("Item has been removed. " + indexResponse)
+              .listen(indexResponse);
           this.emit(":responseReady");
         },
 

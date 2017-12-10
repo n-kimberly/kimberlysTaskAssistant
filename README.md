@@ -1,41 +1,49 @@
 # **kimberly's To Do List Skill**
 
-### This Alexa sample skill allows users to create, 'view', and update their to do list.
+### This Alexa sample skill allows users to create items, update items, and hear their to do list.
 
 <h1 style="text-align: center;"> Example </h1>
 
-> Alexa, open kimberly's to do list.
+> Alexa, open Kimberly's to do list
 
-      Welcome to kimberly's to do list. Do you want to create an item, view all items, or update items on kimberly's to do list?
+      Welcome to Kimberly's to do list. Do you want to create an item, view all items, or update items on Kimberly's to do list?
 
-> I would like to add to my to do list.
+> View please
 
-      Okay, what would you like to add?
+      Sure thing!  Item 1 on your to do list is STAND, Item 2 on your to do list is SIT, Item 3 on your to do list is LIE DOWN.
 
-> Remind me to go grocery shopping.
+> remind me to go grocery shopping
 
       GO GROCERY SHOPPING has been added! You now have 4 items. What else would you like to add? Say menu to return to the main menu.
 
-> I would like to view my to do list.
+> I would like to view my to do list again
 
-      Sure thing!  Item 1 on your to do list is STAND, Item 2 on your to do list is SIT, Item 3 on your to do list is LIE DOWN, Item 4 on your to do list is GO GROCERY SHOPPING
+      Sure thing!  Item 1 on your to do list is STAND, Item 2 on your to do list is SIT, Item 3 on your to do list is LIE DOWN, Item 4 on your to do list is GO GROCERY SHOPPING.
 
-> I would like to update my to do list.
+> I've been productive today. Let's update my to do list
 
-      Okay, I will remind you of your to do items one by one. After each, please respond with completed, remove, or next to hear the next item. Your first item is STAND.
+      Okay, I will recite your to do list items one by one. After each, please respond with completed, remove, or next to hear the next item. Your first item is STAND.
 
-> Completed.
+> Did that
 
-       Item removed. Your next to do item is SIT.
+      Great job! Item has been removed. Your next items is SIT.
 
-> Next.
+> Done
 
-      You'll need to complete that at some point in your life. Your next item is LIE DOWN.
+      Great job! Item has been removed. Your next items is LIE DOWN.
 
-> Remove.
+> Ah, I haven't gotten to that.
 
-      Item removed. Your next to do item is GO GROCERY SHOPPING.
+      You'll need to complete that at some point in your life. Your next items is GO GROCERY SHOPPING.
 
-> Main Menu.
+> Not yet. Driving now...
 
-      Main menu. Do you want to create an item, view all items, or update items on kimberly's to do list?
+      You'll need to complete that at some point in your life. You have no more items. Say menu to return to the main menu.
+
+> exit to do list
+
+      Exiting kimberly's to do list.
+
+> I would like to view my to do list
+
+       Sure thing! Item 1 on your to do list is LIE DOWN, Item 2 on your to do list is GO GROCERY SHOPPING.
